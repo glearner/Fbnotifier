@@ -1,0 +1,26 @@
+{
+   "background": {
+      "page": "background.html"
+   },
+   "browser_action": {
+      "default_icon": "images/ico19.png",
+      "default_title": "FbNotifier"
+   },
+   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+   "description": "Notifications from Facebook on the icon.Quick, simple and easy to use. English language.",
+   "icons": {
+      "128": "images/ico128.png",
+      "16": "img/icon16.png",
+      "19": "images/ico19.png",
+      "32": "images/ico32.png",
+      "48": "images/ico48.png"
+   },
+   "manifest_version": 2,
+   "name": "Fbnotifier",
+   "optional_permissions": [ "background" ],
+   "options_page": "options.html",
+   "permissions": [ "http://*/*", "https://*/*", "tabs", "notifications", "cookies", "management", "webRequest" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "3.2",
+   "web_accessible_resources": [ "images/ico32.png", "images/ico48.png" ]
+}
