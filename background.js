@@ -175,6 +175,24 @@ function init(){
 	control.init();
 }
 
+function init1(){
+	pathNew=(localStorage.pathNew||localStorage.pathNew=='')?localStorage.pathNew:pathNew;
+	pathZero=(localStorage.pathZero||localStorage.pathZero=='')?localStorage.pathZero:pathZero;
+	domain=(localStorage.useMess=='yes')?'messenger.com':'facebook.com/messages';
+	alwaysNew=(localStorage.alwaysNew)?(localStorage.alwaysNew=='yes'):false;
+	showZero=(localStorage.showZero)?(localStorage.showZero=='yes'):false;
+	playSound=(localStorage.playSound)?(localStorage.playSound=='yes'):true;
+	showNoti=(localStorage.showNoti)?(localStorage.showNoti=='yes'):true;
+	timeNoti=parseInt(localStorage.timeNoti||'20000');
+	timerDelay=parseInt(localStorage.refreshInterval||'30000');
+
+	chrome.browserAction.setIcon({path:'images/ico19_offline.png'});
+	chrome.browserAction.setBadgeText({text:'...'});
+	chrome.browserAction.setBadgeBackgroundColor(BADGE_LOADING);
+	loadData();
+	control.init();
+}
+
 function tabCallback(tab){
 	chrome.tabs.onRemoved.addListener(function(tabId){if(tabId==tab.id)loadData();});
 	chrome.windows.update(tab.windowId,{focused:true});
